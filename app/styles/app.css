@@ -1,0 +1,71 @@
+body {
+	width: 100wh;
+	height: 90vh;
+	color: #fff;
+	padding-left: 10%;
+	padding-top: 50px;
+	background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+	background-size: 400% 400%;
+	animation: Gradient 10s ease infinite;
+}
+
+
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+h1,th, p, button {
+	font-family: 'Open Sans';
+}
+table{width: 90%;}
+
+
+th, td {
+  border-bottom: 1px solid #ddd;
+}
+button{
+	background-color: 	#87CEFA;
+	color:white;
+	width: 25%;
+	border: none;
+	border-radius: 12px;
+	font-size: 24px;
+	cursor: pointer;
+}
+
+button span {
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+button span:after {
+  content: '+';
+  opacity: 0;
+  transition: 0.5s;
+}
+
+button:hover span {
+  padding-right: 25px;
+}
+
+button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+#newGame{
+	padding-top: 25px;
+	padding-bottom: 25px;
+}
+th:hover {background-color: 	#87CEFA;}
+#play{
+	width:50%;
+	background-color: #FFD700;
+}

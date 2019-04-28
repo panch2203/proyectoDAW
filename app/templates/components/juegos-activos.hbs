@@ -1,0 +1,26 @@
+{{log this.games}}
+<button id="newGame" {{action this.onSubmit}}>
+	<span>Create New Game </span>
+</button>
+
+<h1>Active Games</h1>
+
+<table>
+	<tr>
+		<th>Code</th>
+		<th>Status</th>
+		<th>Players</th>
+		<th>Play</th>
+	</tr>
+	{{#each this.games as |games|}}
+		<tr>
+			<th>{{games.code}}</th>
+			<th>{{games.status}}</th>
+			<th>{{games.players}}</th>
+			<th><button id="play">Play!</button></th>
+		</tr>
+	{{/each}}
+
+</table>
+
+
