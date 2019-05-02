@@ -1,5 +1,5 @@
 {{log this.games}}
-<select >
+<select onChange={{action this.onChange value="target.value"}}>
   {{#each @users as |user|}}
 		<option value={{user.id}}>{{user.username}}</option>
 	{{/each}}
@@ -19,8 +19,8 @@
 			<th>{{game.code}}</th>
 			<th>{{game.status}}</th>
 			<th>{{game.total_users}}</th>
-			<th><button id="play">
-        Join!
+			<th><button id="play" {{action this.onJoin  game.id}}  >
+        Join! {{game.id}}
 			</button></th>
 			<th>
 				<p>
@@ -28,7 +28,7 @@
 					@route="app.actual-game"
 					@model={{game.id}}
 				>
-					Play!
+					Play! 
 				</LinkTo>
 			</p>
 			</th>
