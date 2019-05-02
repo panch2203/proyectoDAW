@@ -1,4 +1,10 @@
 {{log this.games}}
+<select >
+  {{#each @users as |user|}}
+		<option value={{user.id}}>{{user.username}}</option>
+	{{/each}}
+</select>
+
 <table>
 	<tr>
 		<th>Code</th>
@@ -16,11 +22,16 @@
 			<th><button id="play">
         Join!
 			</button></th>
-			<th><LinkTo
-				@route="actual-game"
-				@model={{@game.id}}      	>
-			Play!
-			</LinkTo></th>
+			<th>
+				<p>
+				<LinkTo
+					@route="app.actual-game"
+					@model={{game.id}}
+				>
+					Play!
+				</LinkTo>
+			</p>
+			</th>
 		</tr>
 	{{/each}}
 

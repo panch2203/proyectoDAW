@@ -1,0 +1,11 @@
+<button id="newGame" >
+  <LinkTo
+    @route="app.index"
+  >
+    EXIT
+  </LinkTo>
+</button>
+{{log this.model.game}}
+<p>{{this.model.game.code}}</p>
+<p>{{this.model.game.status}}</p>
+<p>{{this.model.game.total_users}}</p>
