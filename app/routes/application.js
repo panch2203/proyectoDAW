@@ -1,7 +1,10 @@
 import Route from '@ember/routing/route';
+import { hash } from 'rsvp';
 
 export default class ApplicationRoute extends Route {
 	model(){
-		return this.store.findAll("games");
+		return hash({
+					games: this.store.findAll('game'),					
+		})
 	}
 }
