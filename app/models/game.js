@@ -1,19 +1,24 @@
 import DS from 'ember-data';
-const { Model, attr } = DS;
+const { Model, attr , hasMany} = DS;
 
 export default class GameModel extends Model {
 	@attr("string")   code;
-	@attr("string")   status;
+	@attr("number")   status;
 	@attr("number")   total_users;
-
-	// get statusLetra() {
-	// 	let statusString;
-	// 	if(status=1){
-	// 		return statusString="created";
-	// 	}
-	// 	else if(status=2){
-	// 		return statusString=""
-	// 	}
-	// }
+	@hasMany('play')	plays;
+	 
+	get statusLetra() {
+		let statusString='';
+		if(this.status===1){
+			statusString="CREATED"
+		}
+		else if(this.status===2){
+			statusString="STARTED";
+		}
+		else if(this.status===3){
+			statusString="COMPLETED";
+		}
+		return statusString;
+	}
 
 }

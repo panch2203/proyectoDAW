@@ -4,7 +4,8 @@ export default class AppIndexRoute extends Route {
   model(){
 		return hash({
 					games: this.store.findAll('game'),
-					users: this.store.findAll('user')
+					users: this.store.findAll('user'),
+          plays: this.store.findAll('play')
 		})
 	}
 }

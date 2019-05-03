@@ -5,20 +5,18 @@ export default class AppIndexController extends Controller {
 	@action onSubmit(){
 		console.log("created");
 		let x= this.store.createRecord("games",	{
-			status:"Pending", 
+			status:"Pending",
 		});
 		x.save();
 	}
 	@action onJoin(id,gameId){
-		console.log(id, gameId);
-		let y= this.store.peekRecord('games',gameId);
-		let z= this.store.peekRecord('user',id);
-		let x= this.store.createRecord('games',	{
+		console.log(id, gameId);		
+		let x= this.store.createRecord('play',	{
 			game_id:gameId,
 			user_id: id
 		});
 
 		x.save();
 	}
-	
+
 }

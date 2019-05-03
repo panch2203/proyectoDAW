@@ -13,11 +13,11 @@
 		<th>Join</th>
 		<th>Play</th>
 	</tr>
-	{{#each this.games as |game|}}
+	{{#each @games as |game|}}
 		<tr>
-      {{log game.id}}
+      {{log game.statusLetra}}
 			<th>{{game.code}}</th>
-			<th>{{game.status}}</th>
+			<th>{{game.statusLetra}}</th>
 			<th>{{game.total_users}}</th>
 			<th><button id="play" {{action this.onJoin  game.id}}  >
         Join! {{game.id}}
@@ -28,7 +28,7 @@
 					@route="app.actual-game"
 					@model={{game.id}}
 				>
-					Play! 
+					Play!
 				</LinkTo>
 			</p>
 			</th>

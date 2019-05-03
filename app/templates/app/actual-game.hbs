@@ -5,7 +5,19 @@
     EXIT
   </LinkTo>
 </button>
-{{log this.model.game}}
+<!-- {{log this.model.game}} -->
 <p>{{this.model.game.code}}</p>
-<p>{{this.model.game.status}}</p>
+<p>{{this.model.game.statusLetra}}</p>
 <p>{{this.model.game.total_users}}</p>
+<p>{{this.model.game.id}}</p>
+
+
+{{log this.model.plays}}
+	{{#each this.model.plays as |play|}}
+  <p>DATOS DEL PLAY</p>
+	 <p>{{play.user_id}}</p>
+   <p>{{play.game_id}}</p>
+   <p>{{play.choice}}</p>
+	{{else}}
+		No hay
+	{{/each}}
