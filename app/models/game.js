@@ -5,8 +5,9 @@ export default class GameModel extends Model {
 	@attr("string")   code;
 	@attr("number")   status;
 	@attr("number")   total_users;
-	@hasMany('play')	plays;
-	 
+	@attr("string")   winner_name;
+	@hasMany('plays')	plays;
+
 	get statusLetra() {
 		let statusString='';
 		if(this.status===1){
@@ -19,6 +20,14 @@ export default class GameModel extends Model {
 			statusString="COMPLETED";
 		}
 		return statusString;
+	}
+
+	get isWinner() {
+		let stringWinner=this.winner_name;
+		if(!this.winner_name){
+			stringWinner="No hay Ganador"
+		}
+		return stringWinner;
 	}
 
 }

@@ -6,18 +6,19 @@
   </LinkTo>
 </button>
 <!-- {{log this.model.game}} -->
-<p>{{this.model.game.code}}</p>
-<p>{{this.model.game.statusLetra}}</p>
-<p>{{this.model.game.total_users}}</p>
-<p>{{this.model.game.id}}</p>
+<p>Código: {{this.model.game.code}}</p>
+<p>Estatus: {{this.model.game.statusLetra}}</p>
+<p>Jugadores: {{this.model.game.total_users}}</p>
+<p>Ganador: </p>
 
 
-{{log this.model.plays}}
-	{{#each this.model.plays as |play|}}
-  <p>DATOS DEL PLAY</p>
-	 <p>{{play.user_id}}</p>
-   <p>{{play.game_id}}</p>
-   <p>{{play.choice}}</p>
+
+
+<Player @plays={{this.model.plays}}/>
+	<!-- {{#each this.model.plays as |play|}}
+    {{action this.getUser  play.user_id}}
+    {{log @user.username}}
+    <Player @user_data={{@user}} @play={{play}}/>
 	{{else}}
 		No hay
-	{{/each}}
+	{{/each}} -->

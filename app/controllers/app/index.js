@@ -9,14 +9,15 @@ export default class AppIndexController extends Controller {
 		});
 		x.save();
 	}
+
 	@action onJoin(id,gameId){
-		console.log(id, gameId);		
-		let x= this.store.createRecord('play',	{
+		console.log(id, gameId);
+		let y= this.store.createRecord('play',	{
 			game_id:gameId,
-			user_id: id
+			user_id: id,
 		});
 
-		x.save();
+		y.save();
 	}
 
 }

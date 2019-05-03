@@ -13,26 +13,26 @@
 		<th>Join</th>
 		<th>Play</th>
 	</tr>
+  {{log this.user_global.user}}
 	{{#each @games as |game|}}
 		<tr>
       {{log game.statusLetra}}
 			<th>{{game.code}}</th>
 			<th>{{game.statusLetra}}</th>
 			<th>{{game.total_users}}</th>
-			<th><button id="play" {{action this.onJoin  game.id}}  >
+			<th><button id="play" disabled={{if (gte game.total_users 2 ) "true"}} {{action this.onJoin  game.id}}>
         Join! {{game.id}}
 			</button></th>
 			<th>
-				<p>
+
 				<LinkTo
 					@route="app.actual-game"
 					@model={{game.id}}
 				>
 					Play!
 				</LinkTo>
-			</p>
+
 			</th>
 		</tr>
 	{{/each}}
-
 </table>
