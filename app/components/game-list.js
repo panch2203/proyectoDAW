@@ -12,7 +12,7 @@ export default class GameListComponent extends Component {
   @action onChange(index){
   	this.user_id=index;
   	console.log(index);
-    this.user_global.add(index);
+    this.user_global.set('user', index);
   }
   @action async onJoin(gameId){
   		console.log(gameId);
