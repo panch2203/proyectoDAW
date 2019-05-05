@@ -11,7 +11,6 @@ export default class JuegosActivosComponent extends Component {
 	@action
 	onSubmit () {
 		this.args.handleSubmit();
-			console.log("ok");
 	}
 
 }

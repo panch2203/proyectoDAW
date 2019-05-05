@@ -10,4 +10,22 @@ export default class AppActualGameController extends Controller {
   @action getUser(id){
     this.user= this.store.peekRecord('user', id);    
   }
+  @action onSubmit(id, game_id, gid, choice){
+		console.log(choice+" made it! " + id +" "+ game_id + " "+ gid);
+		
+		this.store.findRecord('play', gid).then((player)=>{
+				player.set("choice", choice);		
+				player.save();	
+			});
+
+	}
+	@action onClick(game_id){
+		console.log(game_id);
+		alert("Game has started");
+		this.store.findRecord('game', game_id).then((game)=>{
+				game.set("status", 2);		
+				game.save();	
+			});
+		
+	}
 }

@@ -1,20 +1,33 @@
-<button id="newGame" >
-  <LinkTo
-    @route="app.index"
-  >
-    EXIT
-  </LinkTo>
-</button>
-<!-- {{log this.model.game}} -->
-<p>Código: {{this.model.game.code}}</p>
-<p>Estatus: {{this.model.game.statusLetra}}</p>
-<p>Jugadores: {{this.model.game.total_users}}</p>
-<p>Ganador: </p>
+<div>
+    <button id="newGame" >
+      <LinkTo
+        @route="app.index"
+      >
+        EXIT
+      </LinkTo>
+    </button>
+    <!-- {{log this.model.game}} -->
+    <p>Código: {{this.model.game.code}}</p>
+    <p>Estatus: {{this.model.game.statusLetra}}</p>
+    <p>Jugadores: {{this.model.game.total_users}}</p>
+    <p>Ganador: 
+        {{#if this.model.game.winner_id}}
+          <p>{{this.model.game.winner_name}}</p>  
+        {{else}}
+          <p>No hay ganador</p>
+        {{/if}}
+    </p>
+    <button 
+      disabled={{if (lt this.model.game.total_users 2) true}}
+      {{action this.onClick  this.model.game.id}}
+    >
+      Begin!
+    </button>
+</div>
 
 
+<Player @plays={{this.model.plays}} @game={{this.model.game}} @handleSubmit={{this.onSubmit}} @winner={{this.model.game.winner_id}}/>
 
-
-<Player @plays={{this.model.plays}}/>
 	<!-- {{#each this.model.plays as |play|}}
     {{action this.getUser  play.user_id}}
     {{log @user.username}}

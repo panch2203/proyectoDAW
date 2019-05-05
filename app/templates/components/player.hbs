@@ -1,15 +1,25 @@
-{{log this.user_global.user}}
 {{#each @plays as |play|}}
-  {{action this.setUser  play.user_id}}
-
-{{log this.user_info.username}}
   <div class="perfilTweet">
-    <img class="kitten" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/cbc3ed46-49b0-4079-9dd7-a85b205b2165/d52qk85-b0e6c7f2-8409-43d0-9aa4-d5de05132660.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2NiYzNlZDQ2LTQ5YjAtNDA3OS05ZGQ3LWE4NWIyMDViMjE2NVwvZDUycWs4NS1iMGU2YzdmMi04NDA5LTQzZDAtOWFhNC1kNWRlMDUxMzI2NjAucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.6nvjs8WZ1RaAZjFIUTOmDqVKl3ykqPLFCQbC257UolU">
-
+   	<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/640px-React-icon.svg.png" class="spinning">
     <p class="textobold">Nombre del usuario: {{play.user_id}}</p>
+    <select onChange={{action this.onChange value="target.value"}} >
+    	<option value="" disabled selected hidden>Choose a value...</option>
+  		<option value="1">Rock</option>
+  		<option value="2">Paper</option>
+  		<option value="3">Scissors</option>
+  		<option value="4">Lizard</option>
+  		<option value="5">Spock</option>
+	</select>
     <p class="textobold">HOLA {{play.game_id}}</p>
+    <button {{action this.onSubmit play.user_id play.game_id play.id }}>
+    Submit!
+    </button>
+    {{#if (eq this.args.winner play.user_id)}}
+    	<p>Ganó</p>
+    {{/if}}
+
 
   </div>
-{{else}}
-  No hay
+    
+
 {{/each}}

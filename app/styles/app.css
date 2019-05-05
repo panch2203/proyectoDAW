@@ -25,17 +25,19 @@ body {
 h1,th, p, button {
 	font-family: 'Open Sans';
 }
-table{width: 90%;}
+table{
+	width: 90%;
+border-bottom: 1px solid #ddd;}
 
 
 th, td {
   border-bottom: 1px solid #ddd;
 }
 button{
-	background-color: 	#87CEFA;
+	background-color: 	transparent;
+	border: 2px solid white;
 	color:white;
 	width: 25%;
-	border: none;
 	border-radius: 12px;
 	font-size: 24px;
 	cursor: pointer;
@@ -64,10 +66,10 @@ button:hover span:after {
 	padding-top: 25px;
 	padding-bottom: 25px;
 }
-th:hover {background-color: 	#87CEFA;}
+/*tr:hover {background-color: 	#C0C0C0;}*/
 #play{
 	width:50%;
-	background-color: #FFD700;
+	background-color: transparent;
 }
 
 .kitten{
@@ -87,4 +89,29 @@ th:hover {background-color: 	#87CEFA;}
 	display: flex;
 	flex-direction: row;
 	align-items: center;
+}
+.opacity{
+	opacity:0.5;
+}
+button:disabled{
+	opacity:0.3;
+	background-color: transparent;
+	cursor: auto;
+}
+.spinning{
+  width: 320px;
+  height: 221px;
+  margin-top: 200px;
+  animation-name: spin;
+  animation-duration: 5000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear; 
+}
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
 }

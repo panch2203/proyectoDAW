@@ -8,7 +8,6 @@ export default class GameListComponent extends Component {
   @tracked games = this.args.games || [];
   @tracked user_id="3";
 
-
   @action onChange(index){
   	this.user_id=index;
   	console.log(index);
