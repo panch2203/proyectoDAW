@@ -1,7 +1,7 @@
 {{#each @plays as |play|}}
   <div class= {{if (eq this.args.winner play.user_id) "ganador"}}>
   	<div class=clase>
-   	<img src="https://pngimage.net/wp-content/uploads/2018/06/react-icon-png-7.png" class="spinning">
+   	<img src="https://pngimage.net/wp-content/uploads/2018/06/react-icon-png-7.png" class="spinning ok">
    	
    	<div  class=margin>
     <p class="textobold">User Id: {{play.user_id}}</p>
@@ -14,7 +14,7 @@
   		<option value="5">Spock</option>
 	</select>
  
-    <button class=newGame {{action this.onSubmit play.user_id play.game_id play.id }} >
+    <button class=newGame {{action this.onSubmit play.user_id play.game_id play.id }} disabled={{if (not-eq this.args.status "STARTED") true}} > 
     Submit!
     </button>
     {{#if (eq this.args.winner play.user_id)}}

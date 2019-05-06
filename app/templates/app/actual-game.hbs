@@ -12,7 +12,11 @@
           <p>{{this.model.game.winner_name}}</p>  
         {{else}}
           <p>There´s no winner</p>
+          {{#if (eq this.model.game.statusLetra  "COMPLETED" )}}
+          <p>Tied</p>
+          {{/if}}
         {{/if}}
+
     </p>
     <button class="newGame"
       disabled={{if (lt this.model.game.total_users 2) true}}
@@ -23,7 +27,7 @@
 </div>
 
 <div class=row>
-    <Player @plays={{this.model.plays}} @game={{this.model.game}} @handleSubmit={{this.onSubmit}} @winner={{this.model.game.winner_id}} />
+    <Player @plays={{this.model.plays}} @game={{this.model.game}} @handleSubmit={{this.onSubmit}} @winner={{this.model.game.winner_id}} @status={{this.model.game.statusLetra}}/>
 </div>
 
 	<!-- {{#each this.model.plays as |play|}}

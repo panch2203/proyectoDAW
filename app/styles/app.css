@@ -144,6 +144,7 @@ button:disabled{
 	border-radius: 50px;
 	margin-top: 20px;
 }
+.ok{margin-right: 50px}
 .clase{
 	display: flex;
 	flex-direction: row;
