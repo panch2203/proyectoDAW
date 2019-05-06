@@ -11,18 +11,20 @@
 		<th>Code</th>
 		<th>Status</th>
 		<th>Players</th>
+    <th>Winner</th>
 		<th>Join</th>
 		<th>Play</th>
 	</tr>
- 
+
 	{{#each @games as |game|}}
 		<tr>
       {{log game.statusLetra}}
 			<th>{{game.code}}</th>
 			<th>{{game.statusLetra}}</th>
 			<th>{{game.total_users}}</th>
+      <th>{{game.winner_name}}</th>
 			<th> <button id="play" disabled={{if (gte game.total_users 2 ) "true"}} {{action this.onJoin  game.id}}>
-        Join! 
+        Join!
 			</button></th>
 			<th>
 
