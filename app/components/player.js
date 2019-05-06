@@ -20,5 +20,6 @@ export default class PlayerComponent extends Component {
   }
   @action async onSubmit(user, game, id){
   	await this.args.handleSubmit(user, game, id, this.choice);
+  	alert("action was submitted");	
   }
 }

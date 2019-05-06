@@ -1,23 +1,20 @@
+<div class=black>
 <div>
-    <button id="newGame" >
-      <LinkTo
-        @route="app.index"
-      >
-        EXIT
-      </LinkTo>
+    <button class="newGame" >
+      <LinkTo @route="app.index" > EXIT </LinkTo>
     </button>
     <!-- {{log this.model.game}} -->
-    <p>Código: {{this.model.game.code}}</p>
-    <p>Estatus: {{this.model.game.statusLetra}}</p>
-    <p>Jugadores: {{this.model.game.total_users}}</p>
-    <p>Ganador: 
+    <p>Code: {{this.model.game.code}}</p>
+    <p>Status: {{this.model.game.statusLetra}}</p>
+    <p>Players: {{this.model.game.total_users}}</p>
+    <p>Winner: 
         {{#if this.model.game.winner_id}}
           <p>{{this.model.game.winner_name}}</p>  
         {{else}}
-          <p>No hay ganador</p>
+          <p>There´s no winner</p>
         {{/if}}
     </p>
-    <button 
+    <button class="newGame"
       disabled={{if (lt this.model.game.total_users 2) true}}
       {{action this.onClick  this.model.game.id}}
     >
@@ -25,8 +22,9 @@
     </button>
 </div>
 
-
-<Player @plays={{this.model.plays}} @game={{this.model.game}} @handleSubmit={{this.onSubmit}} @winner={{this.model.game.winner_id}}/>
+<div class=row>
+    <Player @plays={{this.model.plays}} @game={{this.model.game}} @handleSubmit={{this.onSubmit}} @winner={{this.model.game.winner_id}} />
+</div>
 
 	<!-- {{#each this.model.plays as |play|}}
     {{action this.getUser  play.user_id}}
@@ -35,3 +33,4 @@
 	{{else}}
 		No hay
 	{{/each}} -->
+</div>

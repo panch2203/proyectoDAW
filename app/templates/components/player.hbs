@@ -1,7 +1,10 @@
 {{#each @plays as |play|}}
-  <div class="perfilTweet">
-   	<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/640px-React-icon.svg.png" class="spinning">
-    <p class="textobold">Nombre del usuario: {{play.user_id}}</p>
+  <div class= {{if (eq this.args.winner play.user_id) "ganador"}}>
+  	<div class=clase>
+   	<img src="https://pngimage.net/wp-content/uploads/2018/06/react-icon-png-7.png" class="spinning">
+   	
+   	<div  class=margin>
+    <p class="textobold">User Id: {{play.user_id}}</p>
     <select onChange={{action this.onChange value="target.value"}} >
     	<option value="" disabled selected hidden>Choose a value...</option>
   		<option value="1">Rock</option>
@@ -10,14 +13,15 @@
   		<option value="4">Lizard</option>
   		<option value="5">Spock</option>
 	</select>
-    <p class="textobold">HOLA {{play.game_id}}</p>
-    <button {{action this.onSubmit play.user_id play.game_id play.id }}>
+ 
+    <button class=newGame {{action this.onSubmit play.user_id play.game_id play.id }} >
     Submit!
     </button>
     {{#if (eq this.args.winner play.user_id)}}
-    	<p>Ganó</p>
+    	<p>Won</p>
     {{/if}}
-
+    </div>
+    </div>
 
   </div>
     

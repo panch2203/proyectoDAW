@@ -1,4 +1,5 @@
 {{log this.games}}
+<p>Please select a user: </p>
 <select onChange={{action this.onChange value="target.value"}}>
   {{#each @users as |user|}}
 		<option value={{user.id}}>{{user.username}}</option>
@@ -21,7 +22,7 @@
 			<th>{{game.statusLetra}}</th>
 			<th>{{game.total_users}}</th>
 			<th> <button id="play" disabled={{if (gte game.total_users 2 ) "true"}} {{action this.onJoin  game.id}}>
-        Join! {{game.id}}
+        Join! 
 			</button></th>
 			<th>
 
@@ -29,7 +30,7 @@
 					@route="app.actual-game"
 					@model={{game.id}}
 				>
-					Play!s
+					Play!
 				</LinkTo>
 
 			</th>

@@ -62,7 +62,8 @@ button:hover span:after {
   opacity: 1;
   right: 0;
 }
-#newGame{
+.newGame{
+	width: 100%;
 	padding-top: 25px;
 	padding-bottom: 25px;
 }
@@ -86,9 +87,9 @@ button:hover span:after {
 }
 
 .perfilTweet{
+	font-size: 30px;
 	display: flex;
 	flex-direction: row;
-	align-items: center;
 }
 .opacity{
 	opacity:0.5;
@@ -99,11 +100,10 @@ button:disabled{
 	cursor: auto;
 }
 .spinning{
-  width: 320px;
-  height: 221px;
-  margin-top: 200px;
+  width: 200px;
+  height: 201px;
   animation-name: spin;
-  animation-duration: 5000ms;
+  animation-duration: 8000ms;
   animation-iteration-count: infinite;
   animation-timing-function: linear; 
 }
@@ -114,4 +114,38 @@ button:disabled{
     to {
         transform:rotate(360deg);
     }
+}
+.black{
+	font-size: 30px;
+	display: flex;
+	flex-direction: row;
+}
+.row{
+	display: flex;
+	margin-left: 100px;
+	flex-direction: column;
+	width:500px;	
+}
+.gameButton{
+	color:black;
+	
+}
+.flex{
+	display: flex;
+	flex-direction: row;
+	margin-top: 40px;
+}
+.margin{
+	margin-top: 30px;
+}
+
+.ganador{
+	background-color: green;
+	border-radius: 50px;
+	margin-top: 20px;
+}
+.clase{
+	display: flex;
+	flex-direction: row;
+	margin-top: 40px;
 }

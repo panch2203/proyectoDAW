@@ -16,5 +16,6 @@ export default class GameListComponent extends Component {
   @action async onJoin(gameId){
   		console.log(gameId);
 		await this.args.handleJoin(this.user_id, gameId);
+    alert("Joined the game");
 	}
 }
